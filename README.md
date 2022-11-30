@@ -7,3 +7,4 @@ Pink OS is my first OS, for the moment it doesn't do anything amazing but I work
 ### `add` 0.0.1a
 
 - Add 512 first bytes
+- Add putstr function
