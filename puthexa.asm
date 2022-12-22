@@ -1,36 +1,42 @@
 puthexa:
 	pusha
-	xor dx, dx		; dx = 0 / modulo
-	xor bx, bx
-	mov bx, 16		; divisor
-	div bx			; ax = result
-	call compare
-	popa
-	ret
-compare:
-	pusha
-	mov bx, HEXASCCI
-	cmp dx, 16
-	jl .find
-	add bx, 1
-	jmp compare
+	mov cx, 6
+	add bx, cx 
+.comp:
+	cmp cx, 2
+	jg .loop
+	jmp .end
+
+.loop:
+	
+	mov dx, ax	; reinitialise dx
+	cmp cx, 6
+	je .next
+	cmp cx, 5
+	je .if4
+	cmp cx, 4
+	je .if3
+	shr dx, 12	
+.next:
+	and dl, 0x0f	; recuperer les 4-bits bas
+	cmp dl, 9
+	jg .letter
+	add dl, 48	; caste en char
+.display:
+	sub bx, 1 	; decremente bx
+	mov [bx], dl	; remplace par la bonne lettre
+	sub cx, 1	; decremente le compteur
+	jmp .comp
+
+.if4:
+	shr dx, 4
+	jmp .next
+.if3:
+	shr dx, 8
+	jmp .next
+.letter:
+	add dl, 87
+	jmp .display
 .end:
 	popa
 	ret
-.find:
-	call putchar
-	jmp .end
-putchar:
-	pusha
-	xor ax, ax
-;	mov bx, HEXASCCI	
-	mov ah, 0x0e
-	;call putstr
-	add bx, dx
-	mov al, [bx]  
-	int 0x10
-	popa
-	ret
-
-	
-HEXASCCI db '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 0
