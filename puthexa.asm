@@ -1,3 +1,6 @@
+; ax hexa value
+; bx "0x0000" string
+
 puthexa:
 	pusha
 	mov cx, 6
