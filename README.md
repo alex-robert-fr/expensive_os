@@ -6,7 +6,7 @@ Pink OS is my first OS, for the moment it doesn't do anything amazing but I work
 
 ### `add` 0.0.2a
 
-- Add puthexa function (display one character for the moment)
+- Add puthexa function
 
 ### `add` 0.0.1a
 
