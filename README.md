@@ -4,6 +4,10 @@ Pink OS is my first OS, for the moment it doesn't do anything amazing but I work
 
 ## Changelog
 
+### `add` 0.0.4a
+
+- Entering in 32-bits Protected Mode
+
 ### `add` 0.0.3a
 
 - Add Makefile
