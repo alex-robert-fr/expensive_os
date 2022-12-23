@@ -1,19 +1,29 @@
 NAME=expensive_os
-CC=fasm
-SRC=boot.asm
+ASMCC=fasm
+CC=gcc
+BOOT_SRC=boot.asm
+KERNEL_SRC=kernel.c
 VM=qemu-system-x86_64
 SECTOR=32
 
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(SRC) boot.bin
-	dd if=/dev/zero of=$@.bin bs=512 count=$(SECTOR)
-	dd if=boot.bin of=$@.bin bs=512 conv=notrunc
+$(NAME): boot kernel
+	cat boot.bin kernel.bin > $@.bin
+	rm boot.bin kernel.bin kernel.o
+
+boot:
+	$(ASMCC) $(BOOT_SRC) boot.bin
+	dd if=/dev/zero of=$(NAME).bin bs=512 count=$(SECTOR)
+	dd if=boot.bin of=$(NAME).bin bs=512 conv=notrunc
+
+kernel:
+	$(CC) -ffreestanding -c $(KERNEL_SRC) -o kernel.o
+	ld -o kernel.bin -Ttext 0x1000 kernel.o --oformat binary
 
 run: $(NAME)
 	$(VM) $(NAME).bin
 	
 clear:
-	rm $(NAME).bin boot.bin
+	rm $(NAME).bin
