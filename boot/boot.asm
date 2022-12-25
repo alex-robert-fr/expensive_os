@@ -20,7 +20,7 @@ _start:
 
 	include 'putstr.asm'
 	include 'puthexa.asm'
-	include 'disk_load.asm'
+	include '../drivers/disk_load.asm'
 	include 'gdt.asm'
 	include 'switch_to_pm.asm'
 	include 'print_string_pm.asm'
