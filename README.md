@@ -1,6 +1,6 @@
-# Pink OS
+# Expensive OS
 
-Pink OS is my first OS, for the moment it doesn't do anything amazing but I work hard on it to improve it every day.
+Expensive OS is my first OS, for the moment it doesn't do anything amazing but I work hard on it to improve it every day.
 
 ## Changelog
 
