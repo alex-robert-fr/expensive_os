@@ -18,12 +18,12 @@ _start:
 
 	jmp $
 
-	include 'putstr.asm'
-	include 'puthexa.asm'
-	include '../drivers/disk_load.asm'
-	include 'gdt.asm'
-	include 'switch_to_pm.asm'
-	include 'print_string_pm.asm'
+	include 'putstr.inc'
+	include 'puthexa.inc'
+	include '../drivers/disk_load.inc'
+	include 'gdt.inc'
+	include 'switch_to_pm.inc'
+	include 'print_string_pm.inc'
 
 use16
 load_kernel:
