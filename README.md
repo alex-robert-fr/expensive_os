@@ -14,3 +14,8 @@ Les objectifs sont pour le moment très basique et fortement (si ce n'est essent
 
 ### OBJECTIFS (TRES TRES...) LONG TERME
 Concevoir un OS basé sur la sécurité, la performance et la compatibilité avec les programmes d'autres plateformes (ne vous attendez pas à voir ça d'ici 1 an xD)
+
+### Compilation
+```shell
+> make run
+```
