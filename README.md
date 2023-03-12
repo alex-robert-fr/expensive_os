@@ -18,4 +18,6 @@ Concevoir un OS basé sur la sécurité, la performance et la compatibilité ave
 ### Compilation
 ```shell
 > make run
+> 6 (Begin simulation)
+> c
 ```
