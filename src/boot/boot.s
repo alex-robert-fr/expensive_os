@@ -1,16 +1,23 @@
+org 0x7c00
+
+jmp _start
+include 'print.inc'
 _start:
-    mov ah, 0x0e    ; Ecrit un caractère en mode TTY
-    mov al, 'H'
-    int 0x10        ; Interruption système
-    mov al, 'e' 
-    int 0x10
-    mov al, 'l' 
-    int 0x10
-    int 0x10        ; 'l' se trouve déjà dans le registre al
-    mov al, 'o' 
-    int 0x10
+    mov bx, titre
+    call println
+
+    mov bx, title
+    call println
+
+    mov dx, 0x73a6
+    call print_hex
 
     jmp $
+
+    titre:
+        db 'Bienvenu sur ExpensiveOS', 0
+    title:
+        db 'Welcome to ExpensiveOS', 0
 
     ; Remplie 510 octets 0, depuis l'adresse du début du programme($$) jusqu'à l'adresse actuel du programme($)
     times 510-($-$$) db 0
