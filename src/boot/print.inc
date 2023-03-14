@@ -2,13 +2,13 @@ print:
     push ax
     push bx
 
-    mov ah, 0x0e    ; Ecrit un caractère en mode TTY
+    mov ah, 0x0e            ; Ecrit un caractère en mode TTY
     start:
-        mov al, [bx]
+        mov al, byte [bx]
         cmp al, 0
         je done
 
-        int 0x10        ; Interruption système
+        int 0x10            ; Interruption système
 
         add bx, 1
         jmp start
@@ -56,7 +56,7 @@ print_hex:
     step2:
         mov bx, HEX_OUT + 5 ; chaine + longueur (HEX_OUT + 5 = 0x0000 = 0x73a6 | HEX_OUT + 4 = 0x0000 = 073a60)
         sub bx, cx          ; index bx -= cx                        ^                              ^
-        mov [bx], al        ; copie AL dans la string BX au bon index
+        mov byte [bx], al   ; copie AL dans la string BX au bon index
         ror dx, 4           ; A chaque passage dx subit un bit shit vers la droite
                             ; ce qui permet de passer en revu tout les chiffres pour le masque
                             ; 0x73a6 & 0x000f = 0x6
@@ -78,3 +78,29 @@ print_hex:
 
     HEX_OUT:
         db '0x0000', 0
+
+use32
+
+VIDEO_MEMORY equ 0xb8000
+WHITE_ON_BLACK equ 0x0f
+
+print_string_pm:
+    pusha
+    mov edx, VIDEO_MEMORY
+
+print_string_pm_loop:
+    mov al, [ebx]
+    mov ah, WHITE_ON_BLACK
+
+    cmp al, 0
+    je print_string_pm_done
+
+    mov [edx], ax
+    add ebx, 1
+    add edx, 2
+
+    jmp print_string_pm_loop
+
+print_string_pm_done:
+    popa
+    ret

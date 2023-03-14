@@ -1,2 +1,2 @@
-floppya: 1_44=expensive_os.bin, status=inserted
+floppya: 1_44=./expensive_os.bin, status=inserted
 boot: a
