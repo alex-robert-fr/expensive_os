@@ -68,7 +68,7 @@ print_hex:
 
     end_hex:
         mov bx, HEX_OUT
-        call print
+        call println
 
         pop dx
         pop dx
