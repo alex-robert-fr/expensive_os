@@ -1,4 +1,15 @@
 # Changelog
+## [0.0.5a] - (15.04.2023)
+### Ajouts
+- Fichier `32bit_gdt.inc`
+- Fichier `32bit_gdt.inc`
+- Fichier `32bit_switch.inc`
+- Ajout d'une fonction `switch_to_pm`
+- Ajout d'une fonction `print_string_pm`
+- Ajout du `GDT`
+### Changements
+- `boot.s` démarre en 16-bits puis en 32-bits ! :tada:
+
 ## [0.0.4a] - (14.04.2023)
 ### Ajouts
 - Fichier `disk.inc`

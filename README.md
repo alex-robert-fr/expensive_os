@@ -7,8 +7,9 @@ Salut tout le monde, je vous présente mon premier système d'exploitation (OS) 
 Les objectifs sont pour le moment très basique et fortement (si ce n'est essentiellement) inspiré de [ce document](https://github.com/cfenollosa/os-tutorial)
 
 :x: Pas commencé | :white_check_mark: : En cours | :heavy_check_mark: : Terminé
-- Démarer en 16 bits (mode réel) de zéro sans GRUB :white_check_mark:
-- Entrer en mode 32 bits (mode protégé) :x:
+- Démarer en 16 bits (mode réel) de zéro sans GRUB :heavy_check_mark:
+- Entrer en mode 32 bits (mode protégé) :heavy_check_mark:
+- Passage au kernel :white_check_mark:
 - Passage de l'ASM au C (puis au RUST mais bien plus tard :x:
 - Traitement des interruptions système :x:
 - Sortie à l'ecran et saisie au clavier :x:
