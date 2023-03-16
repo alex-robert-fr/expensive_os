@@ -1,4 +1,12 @@
 # Changelog
+## [0.0.6a] - (16.04.2023)
+### Ajouts
+- Fichier `kernel.c`
+### Changements
+- `boot.s` charge le kernel en mémoire et l'appel !
+- Affiche 'X' en haut a gauche de l'écran
+- `Makefile` amélioré
+
 ## [0.0.5a] - (15.04.2023)
 ### Ajouts
 - Fichier `32bit_gdt.inc`
