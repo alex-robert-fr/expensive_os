@@ -10,6 +10,9 @@ _start:
     mov bx, MSG_REAL_MODE
     call println
 
+    mov bx, MSG_ALEX
+    call println
+
     call load_kernel
     call switch_to_pm
 
@@ -40,6 +43,7 @@ BEGIN_PM:
 
 BOOT_DRIVE: db 0
 MSG_REAL_MODE: db 'Demarrage en 16-bits mode reel', 0
+MSG_ALEX : db 'Produit par Alex Robert', 0
 MSG_PROT_MODE: db 'Demarrage en 32-bits mode protege', 0
 MSG_LOAD_KERNEL: db 'Chargement du kernel en memoire', 0
 
