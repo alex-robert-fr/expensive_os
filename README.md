@@ -10,8 +10,8 @@ Les objectifs sont pour le moment très basique et fortement (si ce n'est essent
 - Démarer en 16 bits (mode réel) de zéro sans GRUB :heavy_check_mark:
 - Entrer en mode 32 bits (mode protégé) :heavy_check_mark:
 - Passage au kernel :heavy_check_mark:
+- Sortie à l'ecran et saisie au clavier :white_check_mark:
 - Traitement des interruptions système :x:
-- Sortie à l'ecran et saisie au clavier :x:
 - Implémentation d'une `microlibc` :x:
 - Passage du C au RUST :x:
 

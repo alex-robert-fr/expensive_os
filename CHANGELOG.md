@@ -1,5 +1,15 @@
 # Changelog
-## [0.0.6a] - (16.04.2023)
+## [0.0.7a] - (24.03.2023)
+### Ajouts
+- Fichiers `ports.c`
+- Fichiers `screen.c`
+- `ports.c` contient deux petites fonction permettant de manipuler le curseur
+- `screen.c` contient une fonction qui permet de clear l'entièreté de l'écran
+### Changements
+- `kernel.c` affiche des 'a' sur tout l'écran et un 'X'
+- Le `Makefile` a était amélioré en conséquence
+
+## [0.0.6a] - (16.03.2023)
 ### Ajouts
 - Fichier `kernel.c`
 ### Changements
@@ -7,7 +17,7 @@
 - Affiche 'X' en haut a gauche de l'écran
 - `Makefile` amélioré
 
-## [0.0.5a] - (15.04.2023)
+## [0.0.5a] - (15.03.2023)
 ### Ajouts
 - Fichier `32bit_gdt.inc`
 - Fichier `32bit_gdt.inc`
@@ -18,7 +28,7 @@
 ### Changements
 - `boot.s` démarre en 16-bits puis en 32-bits ! :tada:
 
-## [0.0.4a] - (14.04.2023)
+## [0.0.4a] - (14.03.2023)
 ### Ajouts
 - Fichier `disk.inc`
 - Ajout d'une fonction `load_disk`

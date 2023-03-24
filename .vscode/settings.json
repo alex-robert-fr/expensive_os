@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.rs": "rust",
+        "hash_map": "c",
+        "*.tcc": "c",
+        "deque": "c",
+        "list": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "unordered_set": "c",
+        "vector": "c",
+        "system_error": "c"
+    }
+}
