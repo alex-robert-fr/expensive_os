@@ -1,9 +1,16 @@
 # Changelog
+## [0.0.8a] - (25.03.2023)
+### Ajouts
+- `screen.c` contient maintenant des fonctions pour afficher du texte à l'écran `print_char` et `print_string`
+- `screen.c` contient aussi d'autre fonctions de gestion du curseur
+### Changements
+- `kernel.c` affiche deux phrases à l'écran
+
 ## [0.0.7a] - (24.03.2023)
 ### Ajouts
-- Fichiers `ports.c`
-- Fichiers `screen.c`
-- `ports.c` contient deux petites fonction permettant de manipuler le curseur
+- Fichier `ports.c`
+- Fichier `screen.c`
+- `ports.c` contient deux petites fonctions permettant de manipuler le curseur
 - `screen.c` contient une fonction qui permet de clear l'entièreté de l'écran
 ### Changements
 - `kernel.c` affiche des 'a' sur tout l'écran et un 'X'
