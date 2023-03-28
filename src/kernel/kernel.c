@@ -10,6 +10,6 @@ void    main()
     int     position = x + y * MAX_COLS;
 
     clear_screen();
-    print_string("Bienvenu sur :\nExpensiveOS", 0, 0, 0x2e);
+    print_string("Bienvenue sur :\nExpensiveOS", 0, 0, 0x2e);
     print_string("Cree par Alex Robert !!!", 0, 3, 0x0f);
 }
