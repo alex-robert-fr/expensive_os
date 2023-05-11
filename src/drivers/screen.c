@@ -1,6 +1,8 @@
 #include "ports.h"
 #include "screen.h"
 
+const char theme = 0x3f;
+
 void    clear_screen()
 {
     unsigned char    *screen = (unsigned char*)VIDEO_ADDRESS;
@@ -10,7 +12,7 @@ void    clear_screen()
     for (i = 0; i < screen_size; i++)
     {
         screen[i * 2] = ' ';
-        screen[i * 2 + 1] = 0x1b;
+        screen[i * 2 + 1] = theme;
     }
 }
 
@@ -28,7 +30,7 @@ int print_char(char c, int x, int y, char attr)
     unsigned char    *vga = (unsigned char*)VIDEO_ADDRESS;
 
     if (!attr)
-        attr = 0x0f;
+        attr = theme;
     if (x >= MAX_COLS || y >= MAX_ROWS)
     {
         vga[2 * MAX_COLS * MAX_ROWS - 2] = 'E';
@@ -57,7 +59,7 @@ int print_char(char c, int x, int y, char attr)
     return (offset);
 }
 
-void    print_string(char *str, int x, int y, char attr)
+void    print_string(char *str, int y, int x, char attr)
 {
     int offset;
     if (x >= 0 && y >= 0)
