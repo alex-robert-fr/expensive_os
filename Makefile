@@ -7,8 +7,9 @@ BOOT_SRC	=	./src/boot/boot.s
 KERNEL_SRC	=	./src/kernel/kernel.c
 PORTS_SRC	=	./src/drivers/ports.c
 SCREEN_SRC	=	./src/drivers/screen.c
-MICROLIB_SRC=	./src/microlib/printchar.c
-OBJ			=	${KERNEL_SRC:.c=.o} ${PORTS_SRC:.c=.o} ${SCREEN_SRC:.c=.o} ${MICROLIB_SRC:.c=.o}
+MICROLIB_SRC=	./src/microlib/printchar.c	\
+				./src/microlib/printstr.c
+OBJ			=	${SCREEN_SRC:.c=.o} ${PORTS_SRC:.c=.o} ${MICROLIB_SRC:.c=.o} ${KERNEL_SRC:.c=.o} 
 
 all: $(NAME)
 

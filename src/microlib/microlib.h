@@ -1,6 +1,7 @@
 #ifndef MICROLIB_H
 #define MICROLIB_H
 
-void	printchar(char c, int x, int y);
+int	printchar(char c, int x, int y);
+void	printstr(char *str, int x, int y);
 
 #endif
