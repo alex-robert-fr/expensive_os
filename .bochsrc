@@ -1,4 +1,2 @@
 floppya: 1_44=./expensive_os.bin, status=inserted
 boot: a
-magic_break: enabled=1
-gdbstub: enabled=0, port=1234

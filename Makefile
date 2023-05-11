@@ -1,4 +1,4 @@
-COMPILE		=	/usr/local/i386elfgcc/bin/
+COMPILE		=	./i386elfgcc/bin/
 CC			=	$(COMPILE)i386-elf-gcc
 LD			=	$(COMPILE)i386-elf-ld
 GDB			=	$(COMPILE)i386-elf-gdb

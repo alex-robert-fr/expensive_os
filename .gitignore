@@ -1,1 +1,3 @@
 expensive_os.bin
+*.o
+i386elfgcc/
