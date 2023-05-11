@@ -3,7 +3,7 @@
 
 void    clear_screen()
 {
-    char    *screen = VIDEO_ADDRESS;
+    unsigned char    *screen = (unsigned char*)VIDEO_ADDRESS;
     int     screen_size = MAX_COLS * MAX_ROWS;
     int     i;
 
@@ -25,7 +25,7 @@ void    set_cursor_offset(int offset)
 
 int print_char(char c, int x, int y, char attr)
 {
-    char    *vga = VIDEO_ADDRESS;
+    unsigned char    *vga = (unsigned char*)VIDEO_ADDRESS;
 
     if (!attr)
         attr = 0x0f;
