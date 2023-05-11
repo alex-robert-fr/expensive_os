@@ -1,5 +1,6 @@
 #include "../drivers/screen.h"
 #include "../drivers/ports.h"
+#include "../microlib/microlib.h"
 
 int    main(void)
 {
@@ -10,4 +11,5 @@ int    main(void)
     int     position = x + y * MAX_COLS;
 
     clear_screen();
+	printchar('a', 1, 0);
 }
