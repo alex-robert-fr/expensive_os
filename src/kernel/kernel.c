@@ -1,9 +1,8 @@
-#include "../drivers/screen.h"
-#include "../drivers/ports.h"
 #include "../microlib/microlib.h"
+#include "../drivers/screen.h"
 
 int    main(void)
 {
     clear_screen();
-	print_string("Hello world", 10, 2, 0x3b);
+	kernel_print_char('A');
 }

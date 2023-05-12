@@ -1,16 +1,16 @@
-#include "ports.h"
 #include "screen.h"
+#include "ports.h"
 
 void    clear_screen()
 {
     unsigned char    *screen = (unsigned char*)VIDEO_ADDRESS;
-    int     screen_size = MAX_COLS * MAX_ROWS;
+    int     screen_size = (MAX_COLS * MAX_ROWS) * 2;
     int     i;
 
-    for (i = 0; i < screen_size; i++)
+    for (i = 0; i < screen_size; i += 2)
     {
-        screen[i * 2] = ' ';
-        screen[i * 2 + 1] = THEME;
+        screen[i] = ' ';
+        screen[i + 1] = THEME;
     }
 }
 
