@@ -10,4 +10,5 @@ int    main(void)
     int     position = x + y * MAX_COLS;
 
     clear_screen();
+	print_string("Hello world", 10, 2, 0x3b);
 }
