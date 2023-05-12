@@ -7,6 +7,8 @@ int	kernel_print_char(char c, int x, int y, char attr)
 	unsigned char*	vga = (unsigned char*) 0xb8000;
 
 	offset = get_offset(x, y);
+	if (offset > 3998)
+		offset = 2;
 	vga[offset] = c;
 	vga[offset + 1] = attr;
 	return (0);

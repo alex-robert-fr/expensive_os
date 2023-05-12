@@ -8,6 +8,6 @@ int    main(void)
 	clear_screen();
 	vga[0] = 'H';
 	vga[1] = 0x0f;
-	kernel_print_char('Y', 10, 7, 0x0C);
+	kernel_print_char('Y', 79, 24, 0x0C);
 	return (0);
 }
