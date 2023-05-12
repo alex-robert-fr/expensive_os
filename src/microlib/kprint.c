@@ -1,12 +1,9 @@
-#include "../drivers/screen.h"
 #include "microlib.h"
 
-int	kernel_print_char(char c)
+int	kernel_print_char()
 {
-	int				offset;
-	unsigned char	*vga = (unsigned char*)VIDEO_ADDRESS;
-	
-	vga[offset] = c;
-	vga[offset + 1] = THEME;
-	return (offset);
+	unsigned char* vga = (unsigned char*) 0xb8000;
+	vga[0] = 'l';
+	vga[1] = 0x02;
+	return (0);
 }

@@ -4,8 +4,10 @@ LD			=	$(COMPILE)i386-elf-ld
 GDB			=	$(COMPILE)i386-elf-gdb
 NAME		=	expensive_os
 BOOT_SRC	=	./src/boot/boot.s
-C_SOURCES	=	$(wildcard src/kernel/*.c src/drivers/*.c src/microlib/*.c)
-H_SOURCES	=	$(wildcard src/kernel/*.h src/drivers/*.h src/microlib/*.h)
+#C_SOURCES	=	$(wildcard src/kernel/*.c src/drivers/*.c src/microlib/*.c)
+#H_SOURCES	=	$(wildcard src/kernel/*.h src/drivers/*.h src/microlib/*.h)
+C_SOURCES	=	$(wildcard src/kernel/*.c)
+H_SOURCES	=	$(wildcard src/kernel/*.h)
 OBJ_SOURCES	=	${C_SOURCES:.c=.o}
 
 all: $(NAME)
@@ -16,10 +18,10 @@ $(NAME): boot.bin kernel.bin kernel.elf
 boot.bin:
 	fasm $(BOOT_SRC) $@
 
-kernel.bin: $(OBJ_SOURCES)
+kernel.bin: src/boot/kernel_entry.o $(OBJ_SOURCES)
 	$(LD) -o $@ -Ttext 0x1000 $^ --oformat binary
 
-kernel.elf: $(OBJ_SOURCES)
+kernel.elf: src/boot/kernel_entry.o $(OBJ_SOURCES)
 	$(LD) -o $@ -Ttext 0x1000 $^
 
 run: $(NAME)
@@ -32,9 +34,9 @@ debug: $(NAME)
 	$(CC) -ffreestanding -c $< -o $@
 
 clear:
-	rm -rf kernel.bin boot.bin expensive_os.bin kernel.elf $(OBJ_SOURCES)
+	rm -rf kernel.bin boot.bin expensive_os.bin kernel.elf $(OBJ_SOURCES) src/boot/kernel_entry.o
 
 re: clear all
 
-%.o: %.asm
+%.o: %.s
 	fasm $< $@

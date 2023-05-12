@@ -3,15 +3,16 @@
 
 void    clear_screen()
 {
-    unsigned char    *screen = (unsigned char*)VIDEO_ADDRESS;
-    int     screen_size = (MAX_COLS * MAX_ROWS) * 2;
-    int     i;
+   	unsigned char* video_memory = (unsigned char*) VIDEO_ADDRESS;
 
-    for (i = 0; i < screen_size; i += 2)
-    {
-        screen[i] = ' ';
-        screen[i + 1] = THEME;
+    for (int y = 0; y < MAX_ROWS; y++) {
+        for (int x = 0; x < MAX_COLS; x++) {
+            int offset = (y * MAX_COLS + x) * 2;
+            video_memory[offset] = 'r';
+            video_memory[offset + 1] = THEME; // Couleur du texte (ici, blanc sur fond noir)
+        }
     }
+
 }
 
 void    set_cursor_offset(int offset)
@@ -79,7 +80,7 @@ void    print_string(char *str, int y, int x, char attr)
 
 int get_offset(int x, int y)
 {
-    return (2 * (x + y * MAX_COLS));
+    return (((y * MAX_COLS) + x) * 2);
 }
 
 int get_offset_row(int offset)
