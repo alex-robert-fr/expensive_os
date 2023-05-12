@@ -80,7 +80,7 @@ void    print_string(char *str, int y, int x, char attr)
 
 int get_offset(int x, int y)
 {
-    return (((y * MAX_COLS) + x) * 2);
+    return (2 * (x + y * MAX_COLS));
 }
 
 int get_offset_row(int offset)

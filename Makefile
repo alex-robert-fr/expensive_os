@@ -4,10 +4,8 @@ LD			=	$(COMPILE)i386-elf-ld
 GDB			=	$(COMPILE)i386-elf-gdb
 NAME		=	expensive_os
 BOOT_SRC	=	./src/boot/boot.s
-#C_SOURCES	=	$(wildcard src/kernel/*.c src/drivers/*.c src/microlib/*.c)
-#H_SOURCES	=	$(wildcard src/kernel/*.h src/drivers/*.h src/microlib/*.h)
-C_SOURCES	=	$(wildcard src/kernel/*.c)
-H_SOURCES	=	$(wildcard src/kernel/*.h)
+C_SOURCES	=	$(wildcard src/microlib/*.c src/kernel/*.c src/drivers/*.c)
+H_SOURCES	=	$(wildcard src/microlib/*.h src/kernel/*.h src/drivers/*.h)
 OBJ_SOURCES	=	${C_SOURCES:.c=.o}
 
 all: $(NAME)
