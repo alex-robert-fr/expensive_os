@@ -1,6 +1,8 @@
 #define VIDEO_ADDRESS 0xb8000
 #define MAX_ROWS 25
 #define MAX_COLS 80
+#define	THEME 0x3f
+#define	ERROR_THEME 0x4c
 
 void    clear_screen();
 void    set_cursor_offset(int offset);

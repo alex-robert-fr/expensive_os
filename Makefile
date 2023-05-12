@@ -8,7 +8,6 @@ C_SOURCES	=	$(wildcard src/kernel/*.c src/drivers/*.c)
 H_SOURCES	=	$(wildcard src/kernel/*.h src/drivers/*.h)
 OBJ_SOURCES	=	${C_SOURCES:.c=.o}
 
-
 all: $(NAME)
 
 $(NAME): boot.bin kernel.bin kernel.elf
@@ -37,11 +36,5 @@ clear:
 
 re: clear all
 
-# bochs
-# target remote localhost:1234
-# symbol-file kernel.elf
-# b main
-# c
-# layout asm
-# ni
-# p $eax
+%.o: %.asm
+	fasm $< $@
