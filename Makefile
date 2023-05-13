@@ -17,7 +17,7 @@ boot.bin:
 	fasm $(BOOT_SRC) $@
 
 kernel.bin: src/boot/kernel_entry.o $(OBJ_SOURCES)
-	$(LD) -o $@ -Ttext 0x1000 $^ --oformat binary
+	$(LD) -o $@ -Ttext0x1000 $^ --oformat binary
 
 kernel.elf: src/boot/kernel_entry.o $(OBJ_SOURCES)
 	$(LD) -o $@ -Ttext 0x1000 $^
@@ -29,7 +29,7 @@ debug: $(NAME)
 	$(GDB) $(NAME).bin -ex "target remote localhost:1234" -ex "symbol-file kernel.elf"
 
 %.o: %.c $(H_SOURCES)
-	$(CC) -ffreestanding -c $< -o $@
+	$(CC) -ffreestanding -c $< -o $@ -g
 
 clear:
 	rm -rf kernel.bin boot.bin expensive_os.bin kernel.elf $(OBJ_SOURCES) src/boot/kernel_entry.o

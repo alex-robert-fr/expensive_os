@@ -4,11 +4,12 @@
 void    clear_screen()
 {
    	unsigned char* video_memory = (unsigned char*) VIDEO_ADDRESS;
+	char *test = "Alex";
 
     for (int y = 0; y < MAX_ROWS; y++) {
         for (int x = 0; x < MAX_COLS; x++) {
             int offset = (y * MAX_COLS + x) * 2;
-            video_memory[offset] = 'r';
+            video_memory[offset] = test[0];
             video_memory[offset + 1] = THEME; // Couleur du texte (ici, blanc sur fond noir)
         }
     }

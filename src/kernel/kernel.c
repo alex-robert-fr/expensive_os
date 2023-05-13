@@ -1,13 +1,12 @@
-#include "../drivers/screen.h"
 #include "../microlib/microlib.h"
+#include "../drivers/screen.h"
 
 int    main(void)
 {
-	unsigned char	*vga = (unsigned char*)0xb8000;
+	char *word = "Alex";
 
 	clear_screen();
-	vga[0] = 'H';
-	vga[1] = 0x0f;
-	kernel_print_char('Y', 79, 24, 0x0C);
+	kputc('X', 0, 0, 0xfC);
+	kputc(word[0], 5, 4, 0xfC);
 	return (0);
 }
