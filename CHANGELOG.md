@@ -1,5 +1,5 @@
 # Changelog
-## [0.0.1a] - (12.03.2023)
+## [0.0.1a] - (23.06.2023)
 ### Ajouts
 - Fichier `Makefile`
 - Fichier `.bochsrc`
