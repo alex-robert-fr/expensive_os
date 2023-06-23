@@ -2,3 +2,4 @@
 *.elf
 *.o
 i386elfgcc/
+build/

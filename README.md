@@ -1,7 +1,5 @@
 # ExpensiveOS (ExOS)
 
-![Etat actuel de l'os](/imgs/expensive_os.png)
-
 ### Présentation
 Salut tout le monde, je vous présente mon premier système d'exploitation (OS) ! Je le développe sur mon temps libre, donc je ne peux pas garantir des mises à jour régulières, mais je ferai de mon mieux quand même :wink: Pour le moment et officiellement, ce projet n'a pas pour but de révolutionner le domaine. Je suis juste un développeur "débutant" qui s'intéresse énormément aux OS et à leur conception. N'hésitez pas à me faire un maximum de retour en ouvrant une `issue` ou sur Discord (Alex.R#5752).
 
