@@ -9,12 +9,21 @@ Salut tout le monde, je vous présente mon premier système d'exploitation (OS) 
 Les objectifs sont pour le moment très basique et fortement (si ce n'est essentiellement) inspiré de [ce document](https://github.com/cfenollosa/os-tutorial)
 
 :x: Pas commencé | :white_check_mark: : En cours | :heavy_check_mark: : Terminé
-- Démarer en 16 bits (mode réel) de zéro sans GRUB :heavy_check_mark:
-- Entrer en mode 32 bits (mode protégé) :heavy_check_mark:
-- Passage au kernel :heavy_check_mark:
-- Traitement des interruptions système :white_check_mark:
-- Sortie à l'ecran et saisie au clavier :x:
-- Implémentation d'une `microlibc` :x:
+- Démarer en 16 bits (mode réel) de zéro sans GRUB :x:
+- Imprimer un message de démarrage :x:
+- Configuration des registres de segments 16 bits et de la pile :x:
+- Informer le BIOS du mode du processeur cible :x:
+- Activer et confirmer l'activation de la ligne A20 :x:
+- Obtenir la carte mémoire du BIOS :x:
+- Localiser le noyau dans le système de fichiers :x:
+- Allouer de la mémoire pour charger l'image du noyau :x:
+- Chargement de l'image du noyau dans la mémoire tampon :x:
+- Vérifier les en-têtes ELF de l'image du noyau :x:
+- Chargement GDTR :x:
+- Activer le mode graphique :x:
+- Activer le mode long, 64 bits :x:
+- Allocation et mappage de la mémoire pour les segments du noyau :x:
+  [...]
 - Passage du C au RUST :x:
 
 ### OBJECTIFS (TRES TRES...) LONG TERME
