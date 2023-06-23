@@ -7,8 +7,8 @@ Salut tout le monde, je vous présente mon premier système d'exploitation (OS) 
 Les objectifs sont pour le moment très basique et fortement (si ce n'est essentiellement) inspiré de [ce document](https://github.com/cfenollosa/os-tutorial)
 
 :x: Pas commencé | :white_check_mark: : En cours | :heavy_check_mark: : Terminé
-- Démarer en 16 bits (mode réel) de zéro sans GRUB :x:
-- Imprimer un message de démarrage :x:
+- Démarer en 16 bits (mode réel) de zéro sans GRUB :heavy_check_mark:
+- Imprimer un message de démarrage :white_check_mark:
 - Configuration des registres de segments 16 bits et de la pile :x:
 - Informer le BIOS du mode du processeur cible :x:
 - Activer et confirmer l'activation de la ligne A20 :x:
