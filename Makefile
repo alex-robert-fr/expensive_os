@@ -1,7 +1,3 @@
-COMPILE		=	./i386elfgcc/bin/
-CC			=	$(COMPILE)i386-elf-gcc
-LD			=	$(COMPILE)i386-elf-ld
-GDB			=	$(COMPILE)i386-elf-gdb
 NAME		=	expensive_os
 BOOT_SRC	=	./src/boot/boot.s
 
@@ -16,14 +12,8 @@ boot.bin:
 run: $(NAME)
 	bochs
 
-debug: $(NAME)
-	$(GDB) $(NAME).bin -ex "target remote localhost:1234" -ex "symbol-file kernel.elf"
-
-%.o: %.c $(H_SOURCES)
-	$(CC) -ffreestanding -c $< -o $@
-
 clear:
-	rm -rf kernel.bin boot.bin expensive_os.bin kernel.elf $(OBJ_SOURCES)
+	rm -rf expensive_os.bin
 
 re: clear all
 
