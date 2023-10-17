@@ -13,7 +13,7 @@ run: $(NAME)
 	bochs
 
 clear:
-	rm -rf expensive_os.bin
+	rm -rf boot.bin expensive_os.bin
 
 re: clear all
 
