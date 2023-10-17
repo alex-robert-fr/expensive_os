@@ -4,24 +4,14 @@ LD			=	$(COMPILE)i386-elf-ld
 GDB			=	$(COMPILE)i386-elf-gdb
 NAME		=	expensive_os
 BOOT_SRC	=	./src/boot/boot.s
-C_SOURCES	=	$(wildcard src/kernel/*.c src/drivers/*.c)
-H_SOURCES	=	$(wildcard src/kernel/*.h src/drivers/*.h)
-OBJ_SOURCES	=	${C_SOURCES:.c=.o}
-
 
 all: $(NAME)
 
-$(NAME): boot.bin kernel.bin kernel.elf
+$(NAME): boot.bin
 	cat $^ > $(NAME).bin
 
 boot.bin:
 	fasm $(BOOT_SRC) $@
-
-kernel.bin: $(OBJ_SOURCES)
-	$(LD) -o $@ -Ttext 0x1000 $^ --oformat binary
-
-kernel.elf: $(OBJ_SOURCES)
-	$(LD) -o $@ -Ttext 0x1000 $^
 
 run: $(NAME)
 	bochs
